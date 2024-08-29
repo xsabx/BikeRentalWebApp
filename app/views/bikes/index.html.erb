@@ -1,0 +1,33 @@
+<h1>Available Bikes</h1>
+
+<%= form_with url: bikes_path, method: :get, local: true do %>
+  <div class="form-group">
+    <label for="start_date">Start Date</label>
+    <%= date_field_tag :start_date, params[:start_date], class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label for="end_date">End Date</label>
+    <%= date_field_tag :end_date, params[:end_date], class: "form-control" %>
+  </div>
+
+  <%= submit_tag 'Check Availability', class: "btn btn-primary" %>
+<% end %>
+
+<hr>
+
+<% if @bikes.any? %>
+  <% @bikes.each do |bike| %>
+    <div class="bike-card">
+      <h2><%= bike.name %></h2>
+      <p>Type: <%= bike.bike_type %></p>
+      <p>Frame Size: <%= bike.frame_size %></p>
+
+      <%= link_to 'Rent', rent_bike_path(bike), class: "btn btn-success" %>
+    </div>
+    <hr>
+  <% end %>
+<% else %>
+  <p>No bikes available during the selected time frame.</p>
+<% end %>
+

@@ -1,0 +1,16 @@
+<h1>Reserve Bike: <%= @bike.name %></h1>
+
+<%= form_with url: reserve_bike_path(@bike), method: :post, local: true do %>
+  <div class="form-group">
+    <label for="start_date">Start Date</label>
+    <%= date_field_tag :start_date, nil, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <label for="end_date">End Date</label>
+    <%= date_field_tag :end_date, nil, class: "form-control", required: true %>
+  </div>
+
+  <%= submit_tag 'Confirm Rental', class: "btn btn-primary" %>
+<% end %>
+

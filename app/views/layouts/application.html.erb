@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CodespacesTryRails</title>
+    <title>BikeRentalWebApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,6 +13,7 @@
 
   <body>
     <% if user_signed_in? %>
+      <%= link_to 'My Rentals', rentals_path, class: 'btn btn-secondary' %>
       <%= link_to 'Edit Profile', edit_user_registration_path %>
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, data: { turbo_method: :delete, turbo_frame: "_top" }%>
     <% else %>
@@ -20,7 +21,6 @@
       <%= link_to 'Sign Up', new_user_registration_path%>
     <% end %>
   
-    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
