@@ -1,0 +1,54 @@
+/* app/assets/stylesheets/bikes.css */
+
+.bike-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff; /* White background to make the card pop */
+    border: 1px solid #dee2e6; /* Light border for a defined edge */
+    border-radius: 8px;
+    padding: 20px; /* Increased padding for more content spacing */
+    margin-bottom: 25px; /* More space between each bike card */
+    margin-left: 15px;  /* Left margin for spacing */
+    margin-right: 15px; /* Right margin for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+  
+.bike-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+  
+.bike-info {
+    max-width: 60%; /* Reduced max-width to give more space for the button */
+}
+  
+.bike-action {
+    text-align: right;
+    flex-grow: 1; /* Allows the button to take up more space */
+    display: flex;
+    justify-content: flex-end; /* Aligns the button to the end of the available space */
+}
+  
+.bike-card h2 {
+    margin-top: 0;
+    color: #333; /* Darker color for title */
+}
+  
+.btn-primary {
+    padding: 12px 24px; /* Increase padding for a larger button */
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #1E2A5E;
+    border: none;
+    font-size: 1.1rem; /* Slightly increase the font size */
+}
+  
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+  

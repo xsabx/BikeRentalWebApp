@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'bikes', media: 'all' %>
+
 <h1>Available Bikes</h1>
 
 <%= form_with url: bikes_path, method: :get, local: true do %>
@@ -14,20 +16,19 @@
   <%= submit_tag 'Check Availability', class: "btn btn-primary" %>
 <% end %>
 
-<hr>
-
 <% if @bikes.any? %>
   <% @bikes.each do |bike| %>
     <div class="bike-card">
-      <h2><%= bike.name %></h2>
-      <p>Type: <%= bike.bike_type %></p>
-      <p>Frame Size: <%= bike.frame_size %></p>
-
-      <%= link_to 'Rent', rent_bike_path(bike), class: "btn btn-success" %>
+      <div class="bike-info">
+        <h2><%= bike.name %></h2>
+        <p>Type: <%= bike.bike_type %></p>
+        <p>Frame Size: <%= bike.frame_size %></p>
+      </div>
+      <div class="bike-action">
+        <%= link_to 'Rent', rent_bike_path(bike), class: "btn btn-primary" %>
+      </div>
     </div>
-    <hr>
   <% end %>
 <% else %>
   <p>No bikes available during the selected time frame.</p>
 <% end %>
-

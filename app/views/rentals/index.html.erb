@@ -1,13 +1,20 @@
+<%= stylesheet_link_tag 'bikes', media: 'all' %>
+
 <h1>Your Rentals</h1>
 
 <% @rentals.each do |rental| %>
-  <div class="rental-card">
-    <h2><%= rental.bike.name %></h2>
-    <p>Rented from: <%= rental.start_date.strftime("%B %d, %Y") %> to <%= rental.end_date.strftime("%B %d, %Y") %></p>
-    <%= link_to 'Cancel Rental', rental_path(rental), 
-            data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, 
-            class: "btn btn-danger" %>
+  <div class="bike-card"> <!-- Reuse the .bike-card class -->
+    <div class="bike-info"> <!-- Reuse the .bike-info class -->
+      <h2><%= rental.bike.name %></h2>
+      <p>Rented from: <%= rental.start_date.strftime("%B %d, %Y") %> to <%= rental.end_date.strftime("%B %d, %Y") %></p>
+    </div>
+    <div class="bike-action"> <!-- Reuse the .bike-action class -->
+      <%= link_to 'Cancel Rental', rental_path(rental), 
+                  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, 
+                  class: "btn btn-danger" %>
+    </div>
   </div>
-  <hr>
+  <!-- Removed <hr> since it was previously used to separate the boxes -->
 <% end %>
+
 
