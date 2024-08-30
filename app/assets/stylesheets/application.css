@@ -1,87 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 body, html {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    width: 100%;
-    max-width: 1200px; 
-    margin: 0 auto; 
-    padding: 0 15px; 
-    box-sizing: border-box; 
-  }
-  
-  header {
-    background-color: #55679C;
-    border-bottom: 1px solid #dee2e6;
-    padding: 10px 0;
-    width: 100%;
-    box-sizing: border-box; /* Ensures padding is included in the width */
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between; /* Ensures space between brand and links */
-    align-items: center;
-    padding: 0; /* Removed padding here as it’s handled by .container */
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .navbar-brand {
-    font-size: 1.5rem;
-    color: #f3f5f8;
-    text-decoration: none;
-  }
-  
-  .navbar-brand:hover {
-    color: #0056b3;
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 10px;
-    margin-left: auto; /* Pushes the buttons to the right */
-  }
-  
-  .navbar-links .btn {
-    width: auto; /* Allow buttons to adjust to their content width */
-  }  
-  
-  /* Button styles */
-  .btn {
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .btn-primary {
-    background-color: #1E2A5E;
-    border: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
-  
-  .btn-secondary {
-    background-color: #6c757d;
-    border: none;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #5a6268;
-  }
-  
-  .btn-danger {
-    background-color: #ee606e;
-    border: none;
-  }
-  
-  .btn-danger:hover {
-    background-color: #c82333;
-  }
+  height: 100%;
+  margin: 0;
+  background-color: #f8f9fa; 
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  width: 100%;
+  background-color: #55679C;
+  padding: 10px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #f3f5f8;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #1E2A5E;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-danger {
+  background-color: #ee606e;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
   
   

@@ -1,4 +1,3 @@
-/* app/assets/stylesheets/bikes.css */
 
 .bike-card {
     display: flex;
@@ -36,7 +35,7 @@
     color: #333; /* Darker color for title */
 }
   
-.btn-primary {
+.btn-rent {
     padding: 12px 24px; /* Increase padding for a larger button */
     border-radius: 4px;
     text-decoration: none;
@@ -47,7 +46,7 @@
     font-size: 1.1rem; /* Slightly increase the font size */
 }
   
-.btn-primary:hover {
+.btn-rent:hover {
     background-color: #0056b3;
 }
 
