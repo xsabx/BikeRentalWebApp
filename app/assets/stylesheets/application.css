@@ -1,40 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-body, html {
-  height: 100%;
+body {
   margin: 0;
-  background-color: #f8f9fa; 
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', Arial, sans-serif; 
 }
 
-header {
-  width: 100%;
+.header {
+  overflow: hidden;
   background-color: #55679C;
-  padding: 10px 0;
-  box-sizing: border-box;
-  border-bottom: 1px solid #dee2e6;
+  padding: 20px 10px;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
-  color: #f3f5f8;
+/* Style the header links */
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
   text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
 }
 
-.navbar-links {
-  display: flex;
-  gap: 10px;
-  margin-left: auto;
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adding shadow to the logo text */
+}
+
+
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: #1E2A5E;
+  color: white;
+  margin-right: 10px;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
 }
 
 .btn {
@@ -43,6 +62,7 @@ header {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  margin: 0; /* Ensure no extra margin around buttons */
 }
 
 .btn-primary {
@@ -71,6 +91,3 @@ header {
 .btn-danger:hover {
   background-color: #c82333;
 }
-
-  
-  
