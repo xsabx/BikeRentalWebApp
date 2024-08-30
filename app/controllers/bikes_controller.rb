@@ -1,26 +1,18 @@
 class BikesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:rent, :reserve]
 
   def index
-    @start_date = params[:start_date]
-    @end_date = params[:end_date]
+    @start_date = params[:start_date] || Date.today.to_s
+    @end_date = params[:end_date] || Date.today.to_s
 
-    if @start_date.present? && @end_date.present?
-      # Parse dates to ensure they are in the correct format
-      start_date = Date.parse(@start_date)
-      end_date = Date.parse(@end_date)
+    start_date = Date.parse(@start_date)
+    end_date = Date.parse(@end_date)
 
-      # Find bikes that are not rented during the selected period
-      @bikes = Bike.left_joins(:rentals)
-                   .where.not(id: Bike.joins(:rentals)
-                   .where("rentals.start_date <= ? AND rentals.end_date >= ?", end_date, start_date))
-                   .distinct
-    else
-      # Show bikes that are available at the current moment
-      @bikes = Bike.left_joins(:rentals)
-                   .where("rentals.id IS NULL OR rentals.end_date < ?", Date.today)
-                   .distinct
-    end
+    # Find bikes that are not rented during the selected period
+    @bikes = Bike.left_joins(:rentals)
+                 .where.not(id: Bike.joins(:rentals)
+                 .where("rentals.start_date <= ? AND rentals.end_date >= ?", end_date, start_date))
+                 .distinct
   end
 
   def rent
