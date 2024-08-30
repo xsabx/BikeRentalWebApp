@@ -5,12 +5,12 @@
 <%= form_with url: bikes_path, method: :get, local: true do %>
   <div class="form-group">
     <label for="start_date">Start Date</label>
-    <%= date_field_tag :start_date, params[:start_date], class: "form-control" %>
+    <%= date_field_tag :start_date, params[:start_date], class: "form-control", required: true, min: Date.today.to_s %>
   </div>
 
   <div class="form-group">
     <label for="end_date">End Date</label>
-    <%= date_field_tag :end_date, params[:end_date], class: "form-control" %>
+    <%= date_field_tag :end_date, params[:end_date], class: "form-control", required: true, min: Date.today.to_s %>
   </div>
 
   <%= submit_tag 'Check Availability', class: "btn btn-primary" %>
@@ -32,3 +32,4 @@
 <% else %>
   <p>No bikes available during the selected time frame.</p>
 <% end %>
+

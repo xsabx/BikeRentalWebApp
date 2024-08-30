@@ -8,18 +8,12 @@ class BikesController < ApplicationController
     start_date = Date.parse(@start_date)
     end_date = Date.parse(@end_date)
 
-    # Find bikes that are not rented during the selected period
-    @bikes = Bike.left_joins(:rentals)
-                 .where.not(id: Bike.joins(:rentals)
-                 .where("rentals.start_date <= ? AND rentals.end_date >= ?", end_date, start_date))
-                 .distinct
+    @bikes = Bike.where.not(id: Bike.joins(:rentals)
+                               .where("rentals.start_date <= ? AND rentals.end_date >= ?", end_date, start_date))
   end
 
   def rent
     @bike = Bike.find(params[:id])
-    if !@bike.available?
-      redirect_to bikes_path, alert: "This bike is not available."
-    end
   end
 
   def reserve
@@ -32,12 +26,17 @@ class BikesController < ApplicationController
     elsif start_date.to_date > end_date.to_date
       redirect_to rent_bike_path(@bike), alert: "End date cannot be before start date."
     else
-      @rental = current_user.rentals.create(
+      @rental = current_user.rentals.new(
         bike: @bike, 
         start_date: start_date, 
         end_date: end_date
       )
-      redirect_to rentals_path, notice: "You have successfully reserved the bike."
+      
+      if @rental.save
+        redirect_to rentals_path, notice: "You have successfully reserved the bike."
+      else
+        redirect_to rent_bike_path(@bike), alert: @rental.errors.full_messages.to_sentence
+      end
     end
   end
 end
