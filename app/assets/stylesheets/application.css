@@ -11,7 +11,6 @@ body {
   padding: 20px 10px;
 }
 
-/* Style the header links */
 .header a {
   float: left;
   color: white;
@@ -23,28 +22,23 @@ body {
   border-radius: 4px;
 }
 
-/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
   font-size: 50px;
   font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adding shadow to the logo text */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
 }
 
 
-
-/* Style the active/current link*/
 .header a.active {
   background-color: #1E2A5E;
   color: white;
   margin-right: 10px;
 }
 
-/* Float the link section to the right */
 .header-right {
   float: right;
 }
 
-/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
@@ -62,7 +56,7 @@ body {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  margin: 0; /* Ensure no extra margin around buttons */
+  margin: 0; 
 }
 
 .btn-primary {

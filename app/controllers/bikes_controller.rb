@@ -2,15 +2,22 @@ class BikesController < ApplicationController
   before_action :authenticate_user!, only: [:rent, :reserve]
 
   def index
-    @start_date = params[:start_date] || Date.today.to_s
-    @end_date = params[:end_date] || Date.today.to_s
-
+    @start_date = params[:start_date].presence || Date.today.to_s
+    @end_date = params[:end_date].presence || Date.today.to_s
+    @search = params[:search]
+  
     start_date = Date.parse(@start_date)
     end_date = Date.parse(@end_date)
-
+  
     @bikes = Bike.where.not(id: Bike.joins(:rentals)
-                               .where("rentals.start_date <= ? AND rentals.end_date >= ?", end_date, start_date))
+                                    .where("rentals.start_date <= ? AND rentals.end_date >= ?", end_date, start_date))
+
+    if @search.present?
+      @bikes = @bikes.where("name LIKE ? OR bike_type LIKE ? OR frame_size LIKE ?", 
+                          "%#{@search}%", "%#{@search}%", "%#{@search}%")
+    end
   end
+  
 
   def rent
     @bike = Bike.find(params[:id])
