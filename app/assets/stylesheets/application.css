@@ -30,8 +30,6 @@ body {
 
 
 .header a.active {
-  background-color: #1E2A5E;
-  color: white;
   margin-right: 10px;
 }
 
@@ -84,4 +82,10 @@ body {
 
 .btn-danger:hover {
   background-color: #c82333;
+}
+
+.back-button {
+  text-align: right; 
+  margin-top: 20px; 
+  padding-right: 20px;
 }

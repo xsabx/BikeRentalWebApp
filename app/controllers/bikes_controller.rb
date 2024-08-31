@@ -6,31 +6,27 @@ class BikesController < ApplicationController
     @end_date = params[:end_date].presence || Date.today.to_s
     @search = params[:search]
   
-    if params[:start_date].blank? || params[:end_date].blank?
-      flash[:alert] = "Both start and end dates must be selected."
-      return redirect_to bikes_path
-    end
-  
     start_date = Date.parse(@start_date)
     end_date = Date.parse(@end_date)
   
-    if end_date < Date.today
-      flash[:alert] = "End date cannot be in the past."
-      return redirect_to bikes_path
-    elsif end_date < start_date
-      flash[:alert] = "End date cannot be before start date."
-      return redirect_to bikes_path
+    @bikes = Bike.all
+  
+    unless params[:start_date].blank? && params[:end_date].blank?
+      if end_date < Date.today
+        flash.now[:alert] = "End date cannot be in the past."
+      elsif end_date < start_date
+        flash.now[:alert] = "End date cannot be before start date."
+      else
+        @bikes = @bikes.where.not(id: Bike.joins(:rentals)
+                                        .where("rentals.start_date <= ? AND rentals.end_date >= ?", end_date, start_date))
+      end
     end
   
-    @bikes = Bike.where.not(id: Bike.joins(:rentals)
-                                    .where("rentals.start_date <= ? AND rentals.end_date >= ?", end_date, start_date))
-
     if @search.present?
       @bikes = @bikes.where("name LIKE ? OR bike_type LIKE ? OR frame_size LIKE ?", 
-                          "%#{@search}%", "%#{@search}%", "%#{@search}%")
+                            "%#{@search}%", "%#{@search}%", "%#{@search}%")
     end
   end
-  
 
   def rent
     @bike = Bike.find(params[:id])

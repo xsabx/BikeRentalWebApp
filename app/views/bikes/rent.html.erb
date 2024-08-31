@@ -9,7 +9,7 @@
       <%= date_field_tag :start_date, nil, class: "form-control", required: true, min: Date.today.to_s %>
       <label for="end_date">End Date:</label>
       <%= date_field_tag :end_date, nil, class: "form-control", required: true, min: Date.today.to_s %>
-      <%= submit_tag 'Confirm Rental', class: "btn btn-primary", data: { confirm: 'Are you sure you want to confirm this rental?' } %>
+      <%= submit_tag 'Confirm Rental', class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>

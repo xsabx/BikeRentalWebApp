@@ -1,94 +1,104 @@
 .devise-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align items to the start of the flex container */
-    height: 100vh; /* Full height of the viewport */
-    padding-top: 60px; /* Adjust the padding to move the card lower or higher */
+    align-items: flex-start; 
+    height: 100vh; 
+    padding-top: 60px; 
     width: 100%;
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+    box-sizing: border-box; 
 }
 
 .devise-card {
-    background-color: #ffffff; /* White background to make the card pop */
-    border: 1px solid #dee2e6; /* Light border for a defined edge */
+    background-color: #ffffff; 
+    border: 1px solid #dee2e6; 
     border-radius: 8px;
-    padding: 20px; /* Increased padding for more content spacing */
-    margin: 0 15px 25px 15px; /* Space below the card and sides */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    max-width: 400px; /* Set a maximum width for the card */
-    width: 100%; /* Make the card responsive */
-    transition: box-shadow 0.3s; /* Only smooth hover for shadow change */
-    text-align: center; /* Center-align all text and form elements */
+    padding: 20px; 
+    margin: 0 15px 25px 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 400px; 
+    width: 100%; 
+    transition: box-shadow 0.3s; 
+    text-align: center; 
 }
 
 .devise-card h2 {
     margin-top: 0;
-    margin-bottom: 20px; /* Add some space below the heading */
-    color: #333; /* Darker color for the title */
-    font-size: 2rem; /* Increase the font size */
+    margin-bottom: 20px; 
+    color: #333; 
+    font-size: 2rem; 
 }
 
 .devise-card .field {
-    margin-bottom: 15px; /* Space between fields */
+    margin-bottom: 15px; 
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Align items to the start (left) */
 }
 
 .devise-card .field label {
-    width: 80%; /* Match the width of the input fields */
-    margin-top: 10px;
-    text-align: left; /* Align labels to the left */
+    width: 100%; /* Make the label full width */
+    margin-bottom: 5px; /* Add some space between label and input */
+    text-align: left; 
 }
 
 .devise-card .field input {
-    width: 80%; /* Set the width of the input fields */
+    width: 100%; /* Match the label's width */
     padding: 8px;
     box-sizing: border-box;
     border-radius: 4px;
     border: 1px solid #ccc;
-}
-
-
-.devise-card .remember-me input {
-    margin-right: 5px; /* Add space between the checkbox and the label */
+    margin-bottom: 10px; /* Add some space below the input field */
 }
 
 .devise-card .links {
-    margin-bottom: 15px; /* Add space between the links and the next element */
-    text-align: center; /* Center the links */
+    text-align: center;
+    padding: 20px; 
 }
 
 .devise-card .actions {
-    text-align: center; /* Center the submit button */
+    text-align: center; 
 }
 
-.devise-card .btn-primary {
-    padding: 8px 16px; /* Slightly reduced padding for a smaller button */
+/* Button styling */
+.devise-card .btn-primary,
+.devise-card .btn-danger {
+    padding: 8px 16px; 
     border-radius: 4px;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    background-color: #1E2A5E;
     border: none;
-    font-size: 1rem; /* Slightly smaller font size */
-    width: auto; /* Allow the button to size according to its content */
-    display: inline-block; /* Keep the button in line with other elements */
-    margin: 0 auto; /* Center the button horizontally */
+    font-size: 1rem; 
+    width: auto; 
+    display: inline-block; 
+    margin: 0 auto; 
+}
+
+.devise-card .btn-primary {
+    background-color: #1E2A5E;
 }
 
 .devise-card .btn-primary:hover {
     background-color: #0056b3;
 }
 
+.devise-card .btn-danger {
+    background-color: #ee606e;
+}
+
+.devise-card .btn-danger:hover {
+    background-color: #c82333;
+}
+
+
 .devise-card .links a {
     color: #6c757d;
     text-decoration: none;
-    font-size: 0.9rem;
-    display: block; /* Ensure the links appear on separate lines */
-    margin-top: 10px; /* Space between the links */
+    font-size: 1rem;
+    display: block; 
 }
+
 
 .devise-card .links a:hover {
     text-decoration: underline;
