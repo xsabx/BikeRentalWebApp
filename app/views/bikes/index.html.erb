@@ -25,6 +25,7 @@
 <% if @bikes.any? %>
   <% @bikes.each do |bike| %>
     <div class="bike-card">
+      <%= image_tag bike.image, class: "bike-image" if bike.image.attached? %>
       <div class="bike-info">
         <h2><%= bike.name %></h2>
         <p>Type: <%= bike.bike_type %></p>
@@ -38,4 +39,3 @@
 <% else %>
   <p>No bikes available during the selected time frame.</p>
 <% end %>
-

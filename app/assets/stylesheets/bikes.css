@@ -13,28 +13,38 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s, box-shadow 0.3s; 
 }
-  
+
 .bike-card:hover {
     transform: translateY(-5px); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
-  
+
+.bike-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; 
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
 .bike-info {
     max-width: 60%; 
+    flex-grow: 1; /* Allow the text to take up the remaining space */
 }
-  
+
 .bike-action {
     text-align: right;
-    flex-grow: 1; 
+    flex-grow: 0; 
     display: flex;
     justify-content: flex-end; 
+    margin-left: auto; /* Push the rent button to the far right */
 }
-  
+
 .bike-card h2 {
     margin-top: 0;
     color: #333; 
 }
-  
+
 .btn-rent {
     padding: 12px 24px; 
     border-radius: 4px;
@@ -45,10 +55,11 @@
     border: none;
     font-size: 1.1rem; 
 }
-  
+
 .btn-rent:hover {
     background-color: #0056b3;
 }
+
 
 /* To center text if needed */
 .text-center {
@@ -136,4 +147,13 @@
 .search-button:hover {
     background-color: #0056b3;
 }
+
+.bike-image-large {
+    width: 200px; 
+    height: auto; 
+    object-fit: cover;  
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
   

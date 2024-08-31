@@ -4,7 +4,6 @@ class CreateBikes < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :type
       t.string :frame_size
-      t.boolean :available, default: true
 
       t.timestamps
     end
