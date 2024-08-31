@@ -1,17 +1,19 @@
-<h1>Reserve Bike: <%= @bike.name %></h1>
+<%= stylesheet_link_tag 'bikes', media: 'all' %>
 
-<%= form_with url: reserve_bike_path(@bike), method: :post, local: true do %>
-  <div class="form-group">
-    <label for="start_date">Start Date</label>
-    <%= date_field_tag :start_date, nil, class: "form-control", required: true, min: Date.today.to_s %>
-  </div>
+<h1 class="text-center">Reserve Bike: <%= @bike.name %></h1>
 
-  <div class="form-group">
-    <label for="end_date">End Date</label>
-    <%= date_field_tag :end_date, nil, class: "form-control", required: true, min: Date.today.to_s %>
-  </div>
+<div class="form-container form-card">
+  <%= form_with url: reserve_bike_path(@bike), method: :post, local: true, class: "form-inline", id: "rental-form" do %>
+    <div class="form-group">
+      <label for="start_date">Start Date:</label>
+      <%= date_field_tag :start_date, nil, class: "form-control", required: true, min: Date.today.to_s %>
+      <label for="end_date">End Date:</label>
+      <%= date_field_tag :end_date, nil, class: "form-control", required: true, min: Date.today.to_s %>
+      <%= submit_tag 'Confirm Rental', class: "btn btn-primary", data: { confirm: 'Are you sure you want to confirm this rental?' } %>
+    </div>
+  <% end %>
+</div>
 
-  <%= submit_tag 'Confirm Rental', class: "btn btn-primary" %>
-<% end %>
+
 
 

@@ -53,6 +53,7 @@
 /* To center text if needed */
 .text-center {
     text-align: center;
+    color: #333;
   }
 
 /* Classes, parameters for availability form (by date) */
