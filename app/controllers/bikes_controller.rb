@@ -3,8 +3,8 @@ class BikesController < ApplicationController
 
   def index
     # Get `start_date` and `end_date` from params or default to today's date.
-    @start_date = params[:start_date].presence || Date.today.to_s
-    @end_date = params[:end_date].presence || Date.today.to_s
+    @start_date = params[:start_date].presence || session[:start_date] || Date.today.to_s
+    @end_date = params[:end_date].presence || session[:end_date] || Date.today.to_s
     @search = params[:search]
   
     start_date = Date.parse(@start_date)
