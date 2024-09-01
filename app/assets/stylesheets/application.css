@@ -5,6 +5,7 @@ body {
   font-family: 'Inter', Arial, sans-serif; 
 }
 
+/* Classes, parameters for header displaying */
 .header {
   overflow: hidden;
   background-color: #55679C;
@@ -48,6 +49,7 @@ body {
   }
 }
 
+/* Classes, parameters for buttons */
 .btn {
   padding: 8px 16px;
   border-radius: 4px;

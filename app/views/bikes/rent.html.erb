@@ -2,6 +2,7 @@
 
 <h1 class="text-center">Reserve Bike: <%= @bike.name %></h1>
 
+<!-- Displays image of a bike -->
 <div class="text-center">
   <% if @bike.image.attached? %>
     <%= image_tag @bike.image, class: "bike-image-large" %>
@@ -10,6 +11,7 @@
   <% end %>
 </div>
 
+<!-- Form for selecting the rental start and end dates and confirm rental -->
 <div class="form-container form-card">
   <%= form_with url: reserve_bike_path(@bike), method: :post, local: true, class: "form-inline", id: "rental-form" do %>
     <div class="form-group">

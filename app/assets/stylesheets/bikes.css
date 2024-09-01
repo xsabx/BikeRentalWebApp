@@ -29,7 +29,7 @@
 
 .bike-info {
     max-width: 60%; 
-    flex-grow: 1; /* Allow the text to take up the remaining space */
+    flex-grow: 1; 
 }
 
 .bike-action {
@@ -37,7 +37,7 @@
     flex-grow: 0; 
     display: flex;
     justify-content: flex-end; 
-    margin-left: auto; /* Push the rent button to the far right */
+    margin-left: auto; 
 }
 
 .bike-card h2 {
@@ -148,6 +148,7 @@
     background-color: #0056b3;
 }
 
+/* Class for bike image displaying */
 .bike-image-large {
     width: 200px; 
     height: auto; 

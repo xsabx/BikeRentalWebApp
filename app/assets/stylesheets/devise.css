@@ -1,3 +1,4 @@
+/* Classes, parameters for views made with devise */
 .devise-container {
     display: flex;
     justify-content: center;
@@ -33,22 +34,22 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start (left) */
+    align-items: flex-start; 
 }
 
 .devise-card .field label {
-    width: 100%; /* Make the label full width */
-    margin-bottom: 5px; /* Add some space between label and input */
+    width: 100%; 
+    margin-bottom: 5px; 
     text-align: left; 
 }
 
 .devise-card .field input {
-    width: 100%; /* Match the label's width */
+    width: 100%; 
     padding: 8px;
     box-sizing: border-box;
     border-radius: 4px;
     border: 1px solid #ccc;
-    margin-bottom: 10px; /* Add some space below the input field */
+    margin-bottom: 10px; 
 }
 
 .devise-card .links {
