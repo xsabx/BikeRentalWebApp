@@ -21,7 +21,7 @@ Once these steps are completed, proceed with setting up the project.
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/xsabx/BikeRentalWebApp.git
 ```
 
 ### 2. Navigate into the project directory
