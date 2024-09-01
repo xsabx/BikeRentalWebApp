@@ -2,7 +2,7 @@ class BikesController < ApplicationController
   before_action :authenticate_user!, only: [:rent, :reserve]   # Ensures that only authenticated users can access the `rent` and `reserve` actions.
 
   def index
-    #`start_date` and `end_date` from params or default to today's date.
+    # Get `start_date` and `end_date` from params or default to today's date.
     @start_date = params[:start_date].presence || Date.today.to_s
     @end_date = params[:end_date].presence || Date.today.to_s
     @search = params[:search]
@@ -11,6 +11,10 @@ class BikesController < ApplicationController
     end_date = Date.parse(@end_date)
   
     @bikes = Bike.all
+  
+    # Store the selected dates in the session so they can be used later in the `rent` action.
+    session[:start_date] = @start_date
+    session[:end_date] = @end_date
   
     # Filter bikes based on date range.
     unless params[:start_date].blank? && params[:end_date].blank?
@@ -34,6 +38,9 @@ class BikesController < ApplicationController
   # Show details of a specific bike before reserving it.
   def rent
     @bike = Bike.find(params[:id])
+    # Set the start and end dates for the form based on the previously selected dates from the session.
+    @start_date = session[:start_date]
+    @end_date = session[:end_date]
   end
 
   # Handle the reservation of a bike.

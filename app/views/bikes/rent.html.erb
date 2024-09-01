@@ -16,15 +16,12 @@
   <%= form_with url: reserve_bike_path(@bike), method: :post, local: true, class: "form-inline", id: "rental-form" do %>
     <div class="form-group">
       <label for="start_date">Start Date:</label>
-      <%= date_field_tag :start_date, nil, class: "form-control", required: true, min: Date.today.to_s %>
+      <%= date_field_tag :start_date, @start_date, class: "form-control", required: true, min: Date.today.to_s %>
+      <!-- Uses @start_date to pre-fill the start date field -->
       <label for="end_date">End Date:</label>
-      <%= date_field_tag :end_date, nil, class: "form-control", required: true, min: Date.today.to_s %>
+      <%= date_field_tag :end_date, @end_date, class: "form-control", required: true, min: Date.today.to_s %>
+      <!-- Uses @end_date to pre-fill the end date field -->
       <%= submit_tag 'Confirm Rental', class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
-
-
-
-
-
