@@ -1,19 +1,21 @@
 # Vides uzstādīšana
+Šo projektu var arī uzstādīt izmantojot GitHub Codespace, tam domāta mape .devcontainer.
 
-### 1. Jābūt instalētam Ruby (3.3.0)
+Lai uzstādītu failu lokāli:
+### 1. Instalēts Ruby (3.3.0)
 To var izdarīt šeit: https://rubyinstaller.org/downloads/.
 Lai apskatītos esošo ruby versiju, izmanto komandu:
 ```bash
 ruby -v
 ```
 
-### 2. Jābūt instalētam Rails
+### 2. Instalēts Rails
 To var izdarīt ar koamndu:
 ```bash
 gem install rails
 ```
 
-### 3. Instalē Bundler
+### 3. Instalēts Bundler
 ```bash
 gem install bundler
 ```
@@ -53,6 +55,7 @@ rails server
 Projekts būs pieejams [http://localhost:3000](http://localhost:3000).
 
 Ja uz Windows netiek izmantota Windows Linux Subsistēma, terminālis jāatver kā administratoram, lai būtu visas nepieciešamas tiesības.
+
 
 # Par WebAplikāciju
 
