@@ -92,4 +92,13 @@ body {
   padding-right: 20px;
 }
 
+.notice {
+  margin-left: 20px;
+}
+
+.alert {
+  margin-left: 20px; /* Adds a gap from the left side */
+}
+
+
 
