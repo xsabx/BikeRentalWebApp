@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Bike.create!([
+  { name: 'Revel Rascal XO Transmission', bike_type: 'Mountain', frame_size: 'Large' },
+  { name: 'Yeti SB140 LR T2 TURQ', bike_type: 'Mountain', frame_size: 'Medium' },
+  { name: 'Merida Reacto 4000', bike_type: 'Road', frame_size: 'Large' },
+  { name: 'Specialized Sirrus X 4.0', bike_type: 'Hybrid', frame_size: 'Small' },
+  { name: 'Gazelle Medeo T10 HMB', bike_type: 'Electric', frame_size: 'Medium' },
+  { name: 'Liv Lurra 29', bike_type: 'Mountain', frame_size: 'Small' },
+  { name: 'Giant TCR Advanced Pro 2', bike_type: 'Road', frame_size: 'Large' },
+  { name: 'Whyte Rheo 1 V1', bike_type: 'Hybrid', frame_size: 'Medium' },
+  { name: 'Gazelle Ultimate C380 HMB', bike_type: 'Electric', frame_size: 'Medium' },
+  { name: 'Ultimate CF SL 7 AXS', bike_type: 'Road', frame_size: 'Small' }
+]).each_with_index do |bike, index|
+  # Attach image to each bike
+  bike.image.attach(
+    io: File.open(Rails.root.join('app/assets/images', "bike#{index+1}.jpg")),
+    filename: "bike#{index+1}.jpg",
+    content_type: 'image/jpeg' # or 'image/webp' based on your file type
+  )
+end
+
+
