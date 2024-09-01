@@ -1,28 +1,26 @@
 # Vides uzstādīšana
-Šo projektu var arī uzstādīt izmantojot GitHub Codespace, tam domāta mape .devcontainer. Izmantojot codespace joprojām jāizveido datubāze, kā norādits zemāk (paralēli tam nedrīkst notikt nekādi citi procesi t.i. servera darbība, procesi konsolē).
+Šo projektu var arī uzstādīt izmantojot GitHub Codespace, tam domāta mape .devcontainer. Izmantojot codespace joprojām jāizveido datubāze, kā norādīts zemāk (paralēli tam nedrīkst notikt nekādi citi procesi t.i. servera darbība, procesi konsolē).
 
 ## Lai uzstādītu projektu lokāli:
-### 1. Instalēts Ruby (3.3.0)
+### 1. Nepieciešams instalēt Ruby (3.3.0)
 To var izdarīt šeit: https://rubyinstaller.org/downloads/.
 Lai apskatītos esošo ruby versiju, izmanto komandu:
 ```bash
 ruby -v
 ```
 
-### 2. Instalēts Rails
-To var izdarīt ar koamndu:
+### 2. Nepieciešams insatlēt Rails
+To var izdarīt ar komandu:
 ```bash
 gem install rails
 ```
 
-### 3. Instalēts Bundler
+### 3. Nepieciešams instalēt Bundler
 ```bash
 gem install bundler
 ```
 
-Kad šie soļo izdarīti, tālāk tiek uzstādīts projekts.
-
-## Soļi
+## Soļi paša projekta uzstādīšanai
 
 ### 1. Klonē repositoriju
 ```bash
@@ -33,7 +31,7 @@ git clone https://github.com/xsabx/BikeRentalWebApp.git
 ```bash
 cd <project-directory>
 ```
-Šeit var arī atvērt editoru (piemēram, VScode ar komandu "code .")
+Šajā solī var atvērt editoru (piemēram, VScode ar komandu "code ." vai atvērt kolonēto mapi manuāli)
 
 ### 3. Veic nepieciešamās instalācijas projektā
 ```bash
