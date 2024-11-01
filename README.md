@@ -44,7 +44,7 @@ rails db:create
 rails db:migrate
 rails db:seed
 ```
-NOTICE! Datu bāzē jābūt tieši 10 velo (ar bildi katram), ja, izveidojot datubāzi, tās failā dati neatbils šim nosacījumam, datubāzes izveides procesā ir bijuši traucējumi. Var manuāli izdzēst development.sqlite3 failu un atkārtot komandas.
+NOTICE! Datubāzē jābūt tieši 10 velo (ar bildi katram), ja, izveidojot datubāzi, tās failā dati neatbilst šim nosacījumam, datubāzes izveides procesā ir bijuši traucējumi. Var manuāli izdzēst development.sqlite3 failu un atkārtot komandas.
 
 ### 5. Startē projektu
 ```bash
