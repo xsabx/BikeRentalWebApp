@@ -12,7 +12,7 @@ class BikesController < ApplicationController
   
     @bikes = Bike.all
   
-    # Store the selected dates in the session so they can be used later in the `rent` action.
+    #Store the selected dates in the session so they can be used later in the `rent` action.
     session[:start_date] = @start_date
     session[:end_date] = @end_date
   
@@ -37,7 +37,7 @@ class BikesController < ApplicationController
 
   # Show details of a specific bike before reserving it.
   def rent
-    @bike = Bike.find(params[:id])
+    @bike = Bike.find(  params[:id])
     # Set the start and end dates for the form based on the previously selected dates from the session.
     @start_date = session[:start_date]
     @end_date = session[:end_date]
@@ -51,7 +51,7 @@ class BikesController < ApplicationController
 
     # Create a new rental record for the current user (and validation for data).
     if start_date.blank? || end_date.blank?
-      redirect_to rent_bike_path(@bike), alert: "Please select both start and end dates."
+         redirect_to rent_bike_path(@bike), alert: "Please select both start and end dates."
     elsif start_date.to_date > end_date.to_date
       redirect_to rent_bike_path(@bike), alert: "End date cannot be before start date."
     else
