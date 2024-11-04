@@ -32,14 +32,14 @@ class BikesController < ApplicationController
     if @search.present?
       @bikes = @bikes.where("name LIKE ? OR bike_type LIKE ? OR frame_size LIKE ?", 
                             "%#{@search}%", "%#{@search}%", "%#{@search}%")
-  end
+    end
   end
 
   # Show details of a specific bike before reserving it.
   def rent
     @bike = Bike.find(  params[:id])
     # Set the start and end dates for the form based on the previously selected dates from the session.
-      @start_date = session[:start_date]
+    @start_date = session[:start_date]
     @end_date = session[:end_date]
   end
 
